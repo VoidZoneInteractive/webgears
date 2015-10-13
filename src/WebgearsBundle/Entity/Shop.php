@@ -8,7 +8,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 /**
  * Class for manage shops in database.
  * @ORM\Table(name="shop")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="WebgearsBundle\Entity\ShopRepository")
  */
 class Shop {
     /**
@@ -35,6 +35,31 @@ class Shop {
     public function __construct()
     {
         $this->vouchers = new ArrayCollection();
+    }
+
+    /**
+     * Assign fields in Shop Entity
+     *
+     * @param \WebgearsBundle\External\Fetcher\Entity\Shop $shopEntity
+     */
+    public function assignFields(\WebgearsBundle\External\Fetcher\Entity\Shop $shopEntity)
+    {
+        $this->id = $shopEntity->id;
+        $this->name = $shopEntity->name;
+    }
+
+    /**
+     * Set id
+     *
+     * @param string $id
+     *
+     * @return Shop
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
     }
 
     /**

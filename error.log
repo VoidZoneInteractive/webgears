@@ -418,3 +418,66 @@
 [Sun Oct 11 22:16:59.254610 2015] [:error] [pid 8667] [client 192.168.1.135:50778] PHP  13. session_write_close() /vagrant/html/webgears/app/cache/prod/classes.php:159
 [Sun Oct 11 22:16:59.254689 2015] [:error] [pid 8667] [client 192.168.1.135:50778] PHP  14. Symfony\\Component\\HttpFoundation\\Session\\Storage\\Proxy\\SessionHandlerProxy->write() /vagrant/html/webgears/app/cache/prod/classes.php:159
 [Sun Oct 11 22:16:59.254768 2015] [:error] [pid 8667] [client 192.168.1.135:50778] PHP  15. SessionHandler->write() /vagrant/html/webgears/app/cache/prod/classes.php:415
+[Tue Oct 13 20:11:08.519028 2015] [:error] [pid 2060] [client 192.168.1.135:54859] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 130547712 bytes) in /vagrant/html/webgears/src/WebgearsBundle/Store/Store.php on line 30
+[Tue Oct 13 20:11:08.521131 2015] [:error] [pid 2060] [client 192.168.1.135:54859] PHP Stack trace:
+[Tue Oct 13 20:11:08.521369 2015] [:error] [pid 2060] [client 192.168.1.135:54859] PHP   1. {main}() /vagrant/html/webgears/web/app_dev.php:0
+[Tue Oct 13 20:11:08.521522 2015] [:error] [pid 2060] [client 192.168.1.135:54859] PHP   2. Symfony\\Component\\HttpKernel\\Kernel->handle() /vagrant/html/webgears/web/app_dev.php:29
+[Tue Oct 13 20:11:08.521618 2015] [:error] [pid 2060] [client 192.168.1.135:54859] PHP   3. Symfony\\Component\\HttpKernel\\DependencyInjection\\ContainerAwareHttpKernel->handle() /vagrant/html/webgears/app/bootstrap.php.cache:2444
+[Tue Oct 13 20:11:08.521709 2015] [:error] [pid 2060] [client 192.168.1.135:54859] PHP   4. Symfony\\Component\\HttpKernel\\HttpKernel->handle() /vagrant/html/webgears/app/bootstrap.php.cache:3222
+[Tue Oct 13 20:11:08.521807 2015] [:error] [pid 2060] [client 192.168.1.135:54859] PHP   5. Symfony\\Component\\HttpKernel\\HttpKernel->handleRaw() /vagrant/html/webgears/app/bootstrap.php.cache:3071
+[Tue Oct 13 20:11:08.521880 2015] [:error] [pid 2060] [client 192.168.1.135:54859] PHP   6. call_user_func_array() /vagrant/html/webgears/app/bootstrap.php.cache:3109
+[Tue Oct 13 20:11:08.521881 2015] [:error] [pid 2060] [client 192.168.1.135:54859] PHP   7. WebgearsBundle\\Controller\\Cron->fetchDataAction() /vagrant/html/webgears/app/bootstrap.php.cache:3109
+[Tue Oct 13 20:11:08.521881 2015] [:error] [pid 2060] [client 192.168.1.135:54859] PHP   8. WebgearsBundle\\Store\\Store->manageShops() /vagrant/html/webgears/src/WebgearsBundle/Controller/Cron.php:38
+[Tue Oct 13 20:11:08.522020 2015] [:error] [pid 2060] [client 192.168.1.135:54859] PHP   9. print_r() /vagrant/html/webgears/src/WebgearsBundle/Store/Store.php:30
+[Tue Oct 13 20:29:10.381877 2015] [:error] [pid 4774] [client 192.168.1.135:54945] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 130547712 bytes) in /vagrant/html/webgears/src/WebgearsBundle/Store/Store.php on line 31
+[Tue Oct 13 20:29:10.382046 2015] [:error] [pid 4774] [client 192.168.1.135:54945] PHP Stack trace:
+[Tue Oct 13 20:29:10.382143 2015] [:error] [pid 4774] [client 192.168.1.135:54945] PHP   1. {main}() /vagrant/html/webgears/web/app_dev.php:0
+[Tue Oct 13 20:29:10.382232 2015] [:error] [pid 4774] [client 192.168.1.135:54945] PHP   2. Symfony\\Component\\HttpKernel\\Kernel->handle() /vagrant/html/webgears/web/app_dev.php:29
+[Tue Oct 13 20:29:10.382321 2015] [:error] [pid 4774] [client 192.168.1.135:54945] PHP   3. Symfony\\Component\\HttpKernel\\DependencyInjection\\ContainerAwareHttpKernel->handle() /vagrant/html/webgears/app/bootstrap.php.cache:2444
+[Tue Oct 13 20:29:10.382408 2015] [:error] [pid 4774] [client 192.168.1.135:54945] PHP   4. Symfony\\Component\\HttpKernel\\HttpKernel->handle() /vagrant/html/webgears/app/bootstrap.php.cache:3222
+[Tue Oct 13 20:29:10.382503 2015] [:error] [pid 4774] [client 192.168.1.135:54945] PHP   5. Symfony\\Component\\HttpKernel\\HttpKernel->handleRaw() /vagrant/html/webgears/app/bootstrap.php.cache:3071
+[Tue Oct 13 20:29:10.382589 2015] [:error] [pid 4774] [client 192.168.1.135:54945] PHP   6. call_user_func_array() /vagrant/html/webgears/app/bootstrap.php.cache:3109
+[Tue Oct 13 20:29:10.382675 2015] [:error] [pid 4774] [client 192.168.1.135:54945] PHP   7. WebgearsBundle\\Controller\\Cron->fetchDataAction() /vagrant/html/webgears/app/bootstrap.php.cache:3109
+[Tue Oct 13 20:29:10.382761 2015] [:error] [pid 4774] [client 192.168.1.135:54945] PHP   8. WebgearsBundle\\Store\\Store->prepareShops() /vagrant/html/webgears/src/WebgearsBundle/Controller/Cron.php:38
+[Tue Oct 13 20:29:10.382846 2015] [:error] [pid 4774] [client 192.168.1.135:54945] PHP   9. print_r() /vagrant/html/webgears/src/WebgearsBundle/Store/Store.php:31
+[Tue Oct 13 20:35:13.337597 2015] [:error] [pid 2062] [client 192.168.1.135:55011] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 130023424 bytes) in /vagrant/html/webgears/src/WebgearsBundle/Store/Store.php on line 31
+[Tue Oct 13 20:35:13.338529 2015] [:error] [pid 2062] [client 192.168.1.135:55011] PHP Stack trace:
+[Tue Oct 13 20:35:13.338684 2015] [:error] [pid 2062] [client 192.168.1.135:55011] PHP   1. {main}() /vagrant/html/webgears/web/app_dev.php:0
+[Tue Oct 13 20:35:13.338786 2015] [:error] [pid 2062] [client 192.168.1.135:55011] PHP   2. Symfony\\Component\\HttpKernel\\Kernel->handle() /vagrant/html/webgears/web/app_dev.php:29
+[Tue Oct 13 20:35:13.338890 2015] [:error] [pid 2062] [client 192.168.1.135:55011] PHP   3. Symfony\\Component\\HttpKernel\\DependencyInjection\\ContainerAwareHttpKernel->handle() /vagrant/html/webgears/app/bootstrap.php.cache:2444
+[Tue Oct 13 20:35:13.338990 2015] [:error] [pid 2062] [client 192.168.1.135:55011] PHP   4. Symfony\\Component\\HttpKernel\\HttpKernel->handle() /vagrant/html/webgears/app/bootstrap.php.cache:3222
+[Tue Oct 13 20:35:13.339075 2015] [:error] [pid 2062] [client 192.168.1.135:55011] PHP   5. Symfony\\Component\\HttpKernel\\HttpKernel->handleRaw() /vagrant/html/webgears/app/bootstrap.php.cache:3071
+[Tue Oct 13 20:35:13.339160 2015] [:error] [pid 2062] [client 192.168.1.135:55011] PHP   6. call_user_func_array() /vagrant/html/webgears/app/bootstrap.php.cache:3109
+[Tue Oct 13 20:35:13.339244 2015] [:error] [pid 2062] [client 192.168.1.135:55011] PHP   7. WebgearsBundle\\Controller\\Cron->fetchDataAction() /vagrant/html/webgears/app/bootstrap.php.cache:3109
+[Tue Oct 13 20:35:13.339329 2015] [:error] [pid 2062] [client 192.168.1.135:55011] PHP   8. WebgearsBundle\\Store\\Store->prepareShops() /vagrant/html/webgears/src/WebgearsBundle/Controller/Cron.php:38
+[Tue Oct 13 20:35:13.339414 2015] [:error] [pid 2062] [client 192.168.1.135:55011] PHP   9. print_r() /vagrant/html/webgears/src/WebgearsBundle/Store/Store.php:31
+[Tue Oct 13 20:35:44.193550 2015] [:error] [pid 2061] [client 192.168.1.135:55015] PHP Fatal error:  Cannot access protected property WebgearsBundle\\Entity\\Shop::$id in /vagrant/html/webgears/src/WebgearsBundle/Store/Store.php on line 33
+[Tue Oct 13 20:35:44.193639 2015] [:error] [pid 2061] [client 192.168.1.135:55015] PHP Stack trace:
+[Tue Oct 13 20:35:44.193714 2015] [:error] [pid 2061] [client 192.168.1.135:55015] PHP   1. {main}() /vagrant/html/webgears/web/app_dev.php:0
+[Tue Oct 13 20:35:44.193783 2015] [:error] [pid 2061] [client 192.168.1.135:55015] PHP   2. Symfony\\Component\\HttpKernel\\Kernel->handle() /vagrant/html/webgears/web/app_dev.php:29
+[Tue Oct 13 20:35:44.193853 2015] [:error] [pid 2061] [client 192.168.1.135:55015] PHP   3. Symfony\\Component\\HttpKernel\\DependencyInjection\\ContainerAwareHttpKernel->handle() /vagrant/html/webgears/app/bootstrap.php.cache:2444
+[Tue Oct 13 20:35:44.193921 2015] [:error] [pid 2061] [client 192.168.1.135:55015] PHP   4. Symfony\\Component\\HttpKernel\\HttpKernel->handle() /vagrant/html/webgears/app/bootstrap.php.cache:3222
+[Tue Oct 13 20:35:44.194067 2015] [:error] [pid 2061] [client 192.168.1.135:55015] PHP   5. Symfony\\Component\\HttpKernel\\HttpKernel->handleRaw() /vagrant/html/webgears/app/bootstrap.php.cache:3071
+[Tue Oct 13 20:35:44.194151 2015] [:error] [pid 2061] [client 192.168.1.135:55015] PHP   6. call_user_func_array() /vagrant/html/webgears/app/bootstrap.php.cache:3109
+[Tue Oct 13 20:35:44.194240 2015] [:error] [pid 2061] [client 192.168.1.135:55015] PHP   7. WebgearsBundle\\Controller\\Cron->fetchDataAction() /vagrant/html/webgears/app/bootstrap.php.cache:3109
+[Tue Oct 13 20:35:44.194332 2015] [:error] [pid 2061] [client 192.168.1.135:55015] PHP   8. WebgearsBundle\\Store\\Store->prepareShops() /vagrant/html/webgears/src/WebgearsBundle/Controller/Cron.php:38
+[Tue Oct 13 20:46:36.464221 2015] [:error] [pid 2063] [client 192.168.1.135:55142] PHP Fatal error:  Call to a member function getName() on a non-object in /vagrant/html/webgears/src/WebgearsBundle/Store/Store.php on line 33
+[Tue Oct 13 20:46:36.465808 2015] [:error] [pid 2063] [client 192.168.1.135:55142] PHP Stack trace:
+[Tue Oct 13 20:46:36.465968 2015] [:error] [pid 2063] [client 192.168.1.135:55142] PHP   1. {main}() /vagrant/html/webgears/web/app_dev.php:0
+[Tue Oct 13 20:46:36.466102 2015] [:error] [pid 2063] [client 192.168.1.135:55142] PHP   2. Symfony\\Component\\HttpKernel\\Kernel->handle() /vagrant/html/webgears/web/app_dev.php:29
+[Tue Oct 13 20:46:36.466246 2015] [:error] [pid 2063] [client 192.168.1.135:55142] PHP   3. Symfony\\Component\\HttpKernel\\DependencyInjection\\ContainerAwareHttpKernel->handle() /vagrant/html/webgears/app/bootstrap.php.cache:2444
+[Tue Oct 13 20:46:36.466342 2015] [:error] [pid 2063] [client 192.168.1.135:55142] PHP   4. Symfony\\Component\\HttpKernel\\HttpKernel->handle() /vagrant/html/webgears/app/bootstrap.php.cache:3222
+[Tue Oct 13 20:46:36.466424 2015] [:error] [pid 2063] [client 192.168.1.135:55142] PHP   5. Symfony\\Component\\HttpKernel\\HttpKernel->handleRaw() /vagrant/html/webgears/app/bootstrap.php.cache:3071
+[Tue Oct 13 20:46:36.466505 2015] [:error] [pid 2063] [client 192.168.1.135:55142] PHP   6. call_user_func_array() /vagrant/html/webgears/app/bootstrap.php.cache:3109
+[Tue Oct 13 20:46:36.466586 2015] [:error] [pid 2063] [client 192.168.1.135:55142] PHP   7. WebgearsBundle\\Controller\\Cron->fetchDataAction() /vagrant/html/webgears/app/bootstrap.php.cache:3109
+[Tue Oct 13 20:46:36.466667 2015] [:error] [pid 2063] [client 192.168.1.135:55142] PHP   8. WebgearsBundle\\Store\\Store->prepareShops() /vagrant/html/webgears/src/WebgearsBundle/Controller/Cron.php:38
+[Tue Oct 13 21:26:51.319389 2015] [:error] [pid 2062] [client 192.168.1.135:55493] PHP Fatal error:  Call to undefined method WebgearsBundle\\Store\\Store::get() in /vagrant/html/webgears/src/WebgearsBundle/Store/Store.php on line 72
+[Tue Oct 13 21:26:51.321341 2015] [:error] [pid 2062] [client 192.168.1.135:55493] PHP Stack trace:
+[Tue Oct 13 21:26:51.321664 2015] [:error] [pid 2062] [client 192.168.1.135:55493] PHP   1. {main}() /vagrant/html/webgears/web/app.php:0
+[Tue Oct 13 21:26:51.321812 2015] [:error] [pid 2062] [client 192.168.1.135:55493] PHP   2. Symfony\\Component\\HttpKernel\\Kernel->handle() /vagrant/html/webgears/web/app.php:28
+[Tue Oct 13 21:26:51.321889 2015] [:error] [pid 2062] [client 192.168.1.135:55493] PHP   3. Symfony\\Component\\HttpKernel\\DependencyInjection\\ContainerAwareHttpKernel->handle() /vagrant/html/webgears/app/bootstrap.php.cache:2444
+[Tue Oct 13 21:26:51.321961 2015] [:error] [pid 2062] [client 192.168.1.135:55493] PHP   4. Symfony\\Component\\HttpKernel\\HttpKernel->handle() /vagrant/html/webgears/app/bootstrap.php.cache:3222
+[Tue Oct 13 21:26:51.322063 2015] [:error] [pid 2062] [client 192.168.1.135:55493] PHP   5. Symfony\\Component\\HttpKernel\\HttpKernel->handleRaw() /vagrant/html/webgears/app/bootstrap.php.cache:3071
+[Tue Oct 13 21:26:51.322152 2015] [:error] [pid 2062] [client 192.168.1.135:55493] PHP   6. call_user_func_array() /vagrant/html/webgears/app/bootstrap.php.cache:3109
+[Tue Oct 13 21:26:51.322237 2015] [:error] [pid 2062] [client 192.168.1.135:55493] PHP   7. WebgearsBundle\\Controller\\Cron->fetchDataAction() /vagrant/html/webgears/app/bootstrap.php.cache:3109
+[Tue Oct 13 21:26:51.322327 2015] [:error] [pid 2062] [client 192.168.1.135:55493] PHP   8. WebgearsBundle\\Store\\Store->insertShops() /vagrant/html/webgears/src/WebgearsBundle/Controller/Cron.php:39

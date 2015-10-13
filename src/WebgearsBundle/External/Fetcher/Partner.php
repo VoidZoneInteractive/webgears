@@ -9,7 +9,8 @@
 namespace WebgearsBundle\External\Fetcher;
 
 use Symfony\Component\Config\Definition\Exception\Exception;
-use WebgearsBundle\Entity\Voucher;
+use WebgearsBundle\External\Fetcher\Entity\Shop;
+use WebgearsBundle\External\Fetcher\Entity\Voucher;
 use WebgearsBundle\External\Fetcher\Partner\Validation;
 
 class Partner implements \WebgearsBundle\Interfaces\ExternalSource {
@@ -19,7 +20,7 @@ class Partner implements \WebgearsBundle\Interfaces\ExternalSource {
      *
      * @var string
      */
-    private $url;
+    public $api_url;
 
     /**
      * @var array
@@ -80,10 +81,8 @@ class Partner implements \WebgearsBundle\Interfaces\ExternalSource {
      *
      * @param $url
      */
-    public function __construct($url)
+    public function __construct()
     {
-        $this->url = $url;
-
         $this->result = new \stdClass();
         $this->result->shops = array();
         $this->result->vouchers = array();
@@ -96,7 +95,7 @@ class Partner implements \WebgearsBundle\Interfaces\ExternalSource {
      */
     private function fetchDataFromSource()
     {
-        $curlHandle = curl_init($this->url);
+        $curlHandle = curl_init($this->api_url);
         curl_setopt($curlHandle, CURLOPT_RETURNTRANSFER, 1);
 
         $rawData = curl_exec($curlHandle);
@@ -153,7 +152,7 @@ class Partner implements \WebgearsBundle\Interfaces\ExternalSource {
             $this->validateAndSanitizeEntity($entity);
 
             // Voucher
-            $voucherEntity = new \stdClass();
+            $voucherEntity = new Voucher();
             $voucherEntity->id      = $entity->id;
             $voucherEntity->shop_id = $entity->programId;
             // Not quite sure if that is desired result
@@ -173,7 +172,7 @@ class Partner implements \WebgearsBundle\Interfaces\ExternalSource {
             $this->result->vouchers[$voucherEntity->hash] = $voucherEntity;
 
             // Shop
-            $shopEntity = new \stdClass();
+            $shopEntity = new Shop();
             $shopEntity->id = $entity->programId;
             $shopEntity->name = $entity->program_name;
 

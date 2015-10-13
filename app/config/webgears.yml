@@ -1,3 +1,0 @@
-parameters:
-    external_source: \WebgearsBundle\External\Fetcher\Partner
-    source_url: http://127.0.0.1/api/vouchers
