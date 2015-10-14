@@ -481,3 +481,21 @@
 [Tue Oct 13 21:26:51.322152 2015] [:error] [pid 2062] [client 192.168.1.135:55493] PHP   6. call_user_func_array() /vagrant/html/webgears/app/bootstrap.php.cache:3109
 [Tue Oct 13 21:26:51.322237 2015] [:error] [pid 2062] [client 192.168.1.135:55493] PHP   7. WebgearsBundle\\Controller\\Cron->fetchDataAction() /vagrant/html/webgears/app/bootstrap.php.cache:3109
 [Tue Oct 13 21:26:51.322327 2015] [:error] [pid 2062] [client 192.168.1.135:55493] PHP   8. WebgearsBundle\\Store\\Store->insertShops() /vagrant/html/webgears/src/WebgearsBundle/Controller/Cron.php:39
+[Wed Oct 14 19:38:31.441223 2015] [:error] [pid 4774] [client 192.168.1.135:62387] PHP Notice:  SessionHandler::gc(): ps_files_cleanup_dir: opendir(/var/lib/php5) failed: Permission denied (13) in /vagrant/html/webgears/app/cache/prod/classes.php on line 423
+[Wed Oct 14 19:38:31.441599 2015] [:error] [pid 4774] [client 192.168.1.135:62387] PHP Stack trace:
+[Wed Oct 14 19:38:31.441709 2015] [:error] [pid 4774] [client 192.168.1.135:62387] PHP   1. {main}() /vagrant/html/webgears/web/app.php:0
+[Wed Oct 14 19:38:31.441809 2015] [:error] [pid 4774] [client 192.168.1.135:62387] PHP   2. Symfony\\Component\\HttpKernel\\Kernel->handle() /vagrant/html/webgears/web/app.php:28
+[Wed Oct 14 19:38:31.441888 2015] [:error] [pid 4774] [client 192.168.1.135:62387] PHP   3. Symfony\\Component\\HttpKernel\\DependencyInjection\\ContainerAwareHttpKernel->handle() /vagrant/html/webgears/app/bootstrap.php.cache:2444
+[Wed Oct 14 19:38:31.441995 2015] [:error] [pid 4774] [client 192.168.1.135:62387] PHP   4. Symfony\\Component\\HttpKernel\\HttpKernel->handle() /vagrant/html/webgears/app/bootstrap.php.cache:3222
+[Wed Oct 14 19:38:31.442113 2015] [:error] [pid 4774] [client 192.168.1.135:62387] PHP   5. Symfony\\Component\\HttpKernel\\HttpKernel->handleRaw() /vagrant/html/webgears/app/bootstrap.php.cache:3071
+[Wed Oct 14 19:38:31.442192 2015] [:error] [pid 4774] [client 192.168.1.135:62387] PHP   6. Symfony\\Component\\EventDispatcher\\EventDispatcher->dispatch() /vagrant/html/webgears/app/bootstrap.php.cache:3098
+[Wed Oct 14 19:38:31.442286 2015] [:error] [pid 4774] [client 192.168.1.135:62387] PHP   7. Symfony\\Component\\EventDispatcher\\EventDispatcher->doDispatch() /vagrant/html/webgears/app/cache/prod/classes.php:2195
+[Wed Oct 14 19:38:31.442372 2015] [:error] [pid 4774] [client 192.168.1.135:62387] PHP   8. call_user_func() /vagrant/html/webgears/app/cache/prod/classes.php:2266
+[Wed Oct 14 19:38:31.442468 2015] [:error] [pid 4774] [client 192.168.1.135:62387] PHP   9. Symfony\\Component\\Security\\Http\\Firewall->onKernelRequest() /vagrant/html/webgears/app/cache/prod/classes.php:2266
+[Wed Oct 14 19:38:31.442562 2015] [:error] [pid 4774] [client 192.168.1.135:62387] PHP  10. Symfony\\Component\\Security\\Http\\Firewall\\ContextListener->handle() /vagrant/html/webgears/app/cache/prod/classes.php:2976
+[Wed Oct 14 19:38:31.442656 2015] [:error] [pid 4774] [client 192.168.1.135:62387] PHP  11. Symfony\\Component\\HttpFoundation\\Session\\Session->get() /vagrant/html/webgears/vendor/symfony/symfony/src/Symfony/Component/Security/Http/Firewall/ContextListener.php:78
+[Wed Oct 14 19:38:31.442737 2015] [:error] [pid 4774] [client 192.168.1.135:62387] PHP  12. Symfony\\Component\\HttpFoundation\\Session\\Storage\\NativeSessionStorage->getBag() /vagrant/html/webgears/app/cache/prod/classes.php:486
+[Wed Oct 14 19:38:31.442811 2015] [:error] [pid 4774] [client 192.168.1.135:62387] PHP  13. Symfony\\Component\\HttpFoundation\\Session\\Storage\\NativeSessionStorage->start() /vagrant/html/webgears/app/cache/prod/classes.php:186
+[Wed Oct 14 19:38:31.442883 2015] [:error] [pid 4774] [client 192.168.1.135:62387] PHP  14. session_start() /vagrant/html/webgears/app/cache/prod/classes.php:120
+[Wed Oct 14 19:38:31.442976 2015] [:error] [pid 4774] [client 192.168.1.135:62387] PHP  15. Symfony\\Component\\HttpFoundation\\Session\\Storage\\Proxy\\SessionHandlerProxy->gc() /vagrant/html/webgears/app/cache/prod/classes.php:120
+[Wed Oct 14 19:38:31.443050 2015] [:error] [pid 4774] [client 192.168.1.135:62387] PHP  16. SessionHandler->gc() /vagrant/html/webgears/app/cache/prod/classes.php:423

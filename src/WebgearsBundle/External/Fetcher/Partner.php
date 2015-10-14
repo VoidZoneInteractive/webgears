@@ -154,6 +154,7 @@ class Partner implements \WebgearsBundle\Interfaces\ExternalSource {
             // Voucher
             $voucherEntity = new Voucher();
             $voucherEntity->id      = $entity->id;
+            $voucherEntity->code    = $entity->code;
             $voucherEntity->shop_id = $entity->programId;
             // Not quite sure if that is desired result
             if ($entity->commissionValueFormatted == 'Default')

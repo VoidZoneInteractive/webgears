@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Class for manage vouchers in database
  *
  * @ORM\Table(name="voucher", indexes={@ORM\Index(name="hash_idx", columns={"hash"}), @ORM\Index(name="shop_idx", columns={"shop_id"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="WebgearsBundle\Entity\VoucherRepository")
  */
 class Voucher {
     /**
@@ -69,9 +69,40 @@ class Voucher {
     protected $hash;
 
     /**
-     * @ORM\OneToOne(targetEntity="Shop", mappedBy="id")
+     * @ORM\ManyToOne(targetEntity="Shop")
+     * @ORM\JoinColumn(name="shop_id", referencedColumnName="id")
      */
     protected $shop;
+
+    /**
+     * Assign fields in Voucher Entity
+     *
+     * @param \WebgearsBundle\External\Fetcher\Entity\Voucher $voucherEntity
+     */
+    public function assignFields(\WebgearsBundle\External\Fetcher\Entity\Voucher $voucher)
+    {
+        $this->id          = $voucher->id;
+        $this->code        = $voucher->code;
+        $this->value       = $voucher->value;
+        $this->url         = $voucher->url;
+        $this->valid_from  = $voucher->valid_from;
+        $this->expire_date = $voucher->expire_date;
+        $this->hash        = $voucher->hash;
+    }
+
+    /**
+     * Set id
+     *
+     * @param integer $id
+     *
+     * @return Voucher
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
 
     /**
      * Get id

@@ -11,6 +11,7 @@ namespace WebgearsBundle\External\Fetcher\Entity;
 class Voucher {
     public $id;
     public $shop_id;
+    public $code;
     public $value;
     public $valid_from;
     public $expire_date;

@@ -8,7 +8,6 @@
 
 namespace WebgearsBundle\Controller;
 
-use FeedBundle\Input\VouchersAPI;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -26,7 +25,6 @@ class Cron extends Controller {
      */
     public function fetchDataAction()
     {
-//        $fetcher = new Fetcher($externalSource);
         $fetcher = $this->get('webgears_fetcher');
         $data = $fetcher->construct()->getResult();
 
@@ -34,10 +32,11 @@ class Cron extends Controller {
         $store->prepareShops($data->shops);
         $store->insertShops();
 
+        $store->prepareVouchers($data->vouchers);
+        $store->insertAndUpdateVouchers();
 
-        header('Content-type: application/json');
-        $response = new Response(json_encode($data));
-        $response->headers->set('Content-Type', 'application/json');
+        $response = new Response('OK');
+//        $response->headers->set('Content-Type', 'application/json');
 
         return $response;
     }

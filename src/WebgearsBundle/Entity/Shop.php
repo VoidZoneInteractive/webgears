@@ -26,9 +26,10 @@ class Shop {
     protected $name;
 
     /**
-     * @ORM\OneToMany(targetEntity="Voucher", mappedBy="shop")
+     * @ORM\OneToMany(targetEntity="Voucher", mappedBy="shop_id")
      */
     protected $vouchers;
+
     /**
      * Constructor
      */
@@ -128,5 +129,19 @@ class Shop {
     public function getVouchers()
     {
         return $this->vouchers;
+    }
+
+    /**
+     * Set vouchers
+     *
+     * @param \WebgearsBundle\Entity\Voucher $vouchers
+     *
+     * @return Shop
+     */
+    public function setVouchers(\WebgearsBundle\Entity\Voucher $vouchers = null)
+    {
+        $this->vouchers = $vouchers;
+
+        return $this;
     }
 }

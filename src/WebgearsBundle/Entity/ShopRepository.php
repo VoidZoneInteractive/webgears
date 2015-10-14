@@ -17,7 +17,8 @@ class ShopRepository extends EntityRepository {
     /**
      * Find shops by provided id list and return matched ids
      *
-     * @param array $shop_id
+     * @param array $shopIds
+     * @return array
      */
     public function selectShopsByIds(array $shopIds)
     {
