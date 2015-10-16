@@ -33,6 +33,10 @@ Aggregate Vouchers - A task for Webgears recruitment process
 * Run `php app/console doctrine:schema:update --force`
 * The app will be available on **/admin/voucher**
 
-### 1.4 About ###
+### 1.4 Additional info ###
+* I have like milion ideas to put some new features and tweaks but decided to finish it because it might take me too much time to complete it :)
+* **I found that *input2.json* have 2 entries about the same product (id is matching). There was no info what to do in that case in task description so I decided remove one entry from the file. I guess that it shoudn't be there but if I was tasked to handle it somehow I would need some extra infor how to do it.**
+
+### 1.5 About ###
 A Symfony project created on October 12, 2015, 06:56 pm.
 Author: **Gregory Gurzeda**
