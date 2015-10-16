@@ -81,11 +81,9 @@ class Voucher extends Controller {
         }
         else
         {
-            $vouchers = $this->getDoctrine()->getRepository('WebgearsBundle:Voucher')->findBy(array('checked' => 0), array('found_date' => 'DESC'));
             return $this->render('webgears/admin/voucher/list.html.twig', array(
                 'title' => 'Vouchers list',
                 'fetchApi' => '/external_api/pull_data',
-                'vouchers' => $vouchers,
             ));
         }
 
