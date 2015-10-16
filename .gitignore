@@ -10,3 +10,5 @@
 /vendor/
 /web/bundles/
 web/info.php
+access.log
+error.log

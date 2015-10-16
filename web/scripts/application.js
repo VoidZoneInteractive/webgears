@@ -3,6 +3,27 @@
  */
 $( document ).ready(function()
 {
+    // Update data
+    function updateData()
+    {
+        $.post('', {action: 'update-data'}, function(data)
+        {
+            if (data.status == 'OK')
+            {
+                $('#content-table').html(data.content);
+            }
+            else
+            {
+                // Alert error to user
+                alert(data.content);
+            }
+        }, 'json');
+    }
+
+    updateData();
+
+    setInterval(updateData(), 60);
+
     // Fetch new data...
     $('#fetch-api').click(function ()
     {
@@ -10,18 +31,7 @@ $( document ).ready(function()
         {
             if (data.status == 'OK')
             {
-                $.post('', {action: 'update-data'}, function(data)
-                {
-                    if (data.status == 'OK')
-                    {
-                        $('#content-table').html(data.content);
-                    }
-                    else
-                    {
-                        // Alert error to user
-                        alert(data.content);
-                    }
-                }, 'json');
+                updateData();
             }
             else
             {
