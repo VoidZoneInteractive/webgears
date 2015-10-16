@@ -27,6 +27,7 @@ class Voucher extends Controller {
     {
         $request = Request::createFromGlobals();
 
+        // Handle various XHR request
         if ($request->isXmlHttpRequest())
         {
             switch ($request->request->get('action', null))
