@@ -8,6 +8,7 @@
 
 namespace WebgearsBundle\Entity;
 use Doctrine\ORM\EntityRepository;
+use Symfony\Component\Config\Definition\Exception\Exception;
 
 /**
  * Class VoucherRepository
@@ -47,5 +48,30 @@ class VoucherRepository extends EntityRepository {
         )->setParameter('ids', $vouchersIds);
 
         return $query->getResult();
+    }
+
+    /**
+     * Mark voucher as checked
+     * @param int $voucherId
+     * @return bool
+     */
+    public function updateChecked($voucherId)
+    {
+        $voucher = $this->find($voucherId);
+
+        // Voucher doesn't exist
+        if (!$voucher)
+        {
+            throw new Exception(sprintf('Voucher with id = %d doesn\'t exist.', $voucherId));
+
+            return false;
+        }
+
+        $voucher->setChecked(1);
+
+
+        $this->getEntityManager()->flush($voucher);
+
+        return true;
     }
 } 

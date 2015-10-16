@@ -150,41 +150,47 @@ class Store {
         $i = 0;
 
         // Insert new vouchers
-        foreach ($this->vouchers['to_insert'] as $voucher)
+        if (!is_null($this->vouchers['to_insert']))
         {
-            $voucherEntity = new Voucher();
-            $voucherEntity->assignFields($voucher);
-            $shop = $this->entityManager->getRepository('WebgearsBundle:Shop')->find($voucher->shop_id);
-            $voucherEntity->setShop($shop);
-            $voucherEntity->setFoundDate(new \DateTime());
+            foreach ($this->vouchers['to_insert'] as $voucher)
+            {
+                $voucherEntity = new Voucher();
+                $voucherEntity->assignFields($voucher);
+                $shop = $this->entityManager->getRepository('WebgearsBundle:Shop')->find($voucher->shop_id);
+                $voucherEntity->setShop($shop);
+                $voucherEntity->setFoundDate(new \DateTime());
 
-            $this->entityManager->persist($voucherEntity);
+                $this->entityManager->persist($voucherEntity);
 
-            $metadata = $this->entityManager->getClassMetaData(get_class($voucherEntity));
-            $metadata->setIdGeneratorType(ClassMetadata::GENERATOR_TYPE_NONE);
+                $metadata = $this->entityManager->getClassMetaData(get_class($voucherEntity));
+                $metadata->setIdGeneratorType(ClassMetadata::GENERATOR_TYPE_NONE);
 
 
-            $this->entityManager->flush();
+                $this->entityManager->flush();
 
-            ++$i;
+                ++$i;
+            }
         }
         $this->logger->info(sprintf('Finished inserting vouchers into database. New positions: %d.', $i));
 
         // Update existing vouchers
         $i = 0;
-        foreach($this->vouchers['to_update'] as $voucher)
+        if (!is_null($this->vouchers['to_update']))
         {
-            $voucherEntity = $this->entityManager->getRepository('WebgearsBundle:Voucher')->find($voucher->id);
-            $voucherEntity->assignFields($voucher);
-            $shop = $this->entityManager->getRepository('WebgearsBundle:Shop')->find($voucher->shop_id);
-            $voucherEntity->setShop($shop);
-            $voucherEntity->setFoundDate(new \DateTime());
+            foreach($this->vouchers['to_update'] as $voucher)
+            {
+                $voucherEntity = $this->entityManager->getRepository('WebgearsBundle:Voucher')->find($voucher->id);
+                $voucherEntity->assignFields($voucher);
+                $shop = $this->entityManager->getRepository('WebgearsBundle:Shop')->find($voucher->shop_id);
+                $voucherEntity->setShop($shop);
+                $voucherEntity->setChecked(0);
+                $voucherEntity->setFoundDate(new \DateTime());
 
-            $this->entityManager->flush();
+                $this->entityManager->flush();
 
-            ++$i;
+                ++$i;
+            }
         }
-
         $this->logger->info(sprintf('Finished updating vouchers into database. Updated positions: %d.', $i));
 
         return $this;

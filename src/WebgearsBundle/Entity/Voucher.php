@@ -19,6 +19,13 @@ class Voucher {
     protected $id;
 
     /**
+     * Checked voucher
+     *
+     * @ORM\Column(type="smallint", options={"default" = 0})
+     */
+    protected $checked;
+
+    /**
      * Shop id
      *
      * @ORM\Column(type="integer")
@@ -82,6 +89,7 @@ class Voucher {
     public function assignFields(\WebgearsBundle\External\Fetcher\Entity\Voucher $voucher)
     {
         $this->id          = $voucher->id;
+        $this->checked     = 0;
         $this->code        = $voucher->code;
         $this->value       = $voucher->value;
         $this->url         = $voucher->url;
@@ -328,5 +336,29 @@ class Voucher {
     public function getShop()
     {
         return $this->shop;
+    }
+
+    /**
+     * Set checked
+     *
+     * @param integer $checked
+     *
+     * @return Voucher
+     */
+    public function setChecked($checked)
+    {
+        $this->checked = $checked;
+
+        return $this;
+    }
+
+    /**
+     * Get checked
+     *
+     * @return integer
+     */
+    public function getChecked()
+    {
+        return $this->checked;
     }
 }

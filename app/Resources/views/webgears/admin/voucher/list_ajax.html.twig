@@ -1,0 +1,15 @@
+{% for voucher in vouchers %}
+    <tr data-voucher="{{ voucher.getId }}">
+        <td><input type="checkbox" class="checkbox" name="voucher[]" value="{{ voucher.getId }}" /></td>
+        <td>{{ voucher.getId }}</td>
+        <td>{{ voucher.getShop.getName }}</td>
+        <td>{{ voucher.getCode }}</td>
+        <td>{{ voucher.getValue }}</td>
+        <td>
+            <a href="{{ voucher.getUrl }}" target="_blank">{{ voucher.getUrl }}</a>
+        </td>
+        <td>{{ voucher.getValidFrom.format('Y-m-d H:i:s') }}</td>
+        <td>{{ voucher.getExpireDate.format('Y-m-d H:i:s') }}</td>
+        <td>{{ voucher.getFoundDate.format('Y-m-d H:i:s') }}</td>
+    </tr>
+{% endfor %}
