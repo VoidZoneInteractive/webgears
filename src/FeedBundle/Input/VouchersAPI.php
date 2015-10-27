@@ -57,7 +57,7 @@ class VouchersAPI implements \FeedBundle\Interfaces\VouchersAPI {
         else
         {
             $data = json_decode($this->data['input2.json'],1);
-            unset($data[4]);
+//            unset($data[4]);
             $this->data['input2.json'] = json_encode(array_values($data));
             return $this->data['input2.json'];
         }
